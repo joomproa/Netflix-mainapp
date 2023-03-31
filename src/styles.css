@@ -3,3 +3,17 @@
 .light {
     color: green;
 }
+
+.btn-success {
+    height: 30px;
+    width: 130px;
+    background-color: green;
+    color: white;
+}
+
+.btn-danger {
+    height: 30px;
+    width: 130px;
+    background-color:red;
+    color: white;
+}

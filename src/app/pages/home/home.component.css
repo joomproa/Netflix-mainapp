@@ -1,0 +1,63 @@
+.success {
+    width : 200px;
+    height: 100px;
+    padding-right: 10px;
+    background: red;
+}
+
+
+.lili {
+    width: 100px;
+}
+
+.custom-h1 {
+    font-size: 50px;
+    font-weight: 400;
+}
+
+.lilidiv {
+    background: green;
+    border: 2px solid black;
+    width: 500px;
+    /* padding-top: 20px; */
+    padding: 20px 50px 20px 50px;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+
+.title {
+    color: red;
+}
+
+.lilidiv2 {
+    background: green;
+    border: 2px solid black;
+    width: 500px;
+    /* padding-top: 20px; */
+    padding: 20px 50px 20px 50px;
+    color: black;
+}
+
+.lililight{
+    background: white;
+    padding: 20px 50px 20px 50px;
+}
+
+.find {
+    background-color: red;
+    color: white;
+    border-radius: 100%;
+    width: 100px;
+    height: 100px;
+}
+
+.number {
+    text-align: center;
+    position: absolute;
+    bottom: 1px;
+    bottom: -370px;
+    left: 40px;
+    font-size: 30px;
+    font-weight: 900;
+}
