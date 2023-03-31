@@ -16,15 +16,26 @@
 }
 
 .lilidiv {
-    background: green;
     border: 2px solid black;
-    width: 500px;
-    /* padding-top: 20px; */
+    width: 200px;
     padding: 20px 50px 20px 50px;
     color: white;
     margin-bottom: 20px;
     border-radius: 20px;
+    position: relative;
+    height: 300px;
+    overflow: hidden;
 }
+
+.myVideo {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+}
+
 
 .title {
     color: red;
@@ -61,3 +72,12 @@
     font-size: 30px;
     font-weight: 900;
 }
+
+
+.red-text {
+    color: red;
+  }
+
+  .my-class {
+    font-size: 50px;
+  }
