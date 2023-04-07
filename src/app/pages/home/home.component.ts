@@ -8,6 +8,8 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HomeComponent implements OnInit {
 
+  
+
   title = "This is my Home Page";
   title2 = "mummy";
   totalstudent:any;
@@ -19,13 +21,18 @@ export class HomeComponent implements OnInit {
   constructor(private data: HttpClient){}
 
   ngOnInit(){
-    this.data.get("https://reqres.in/api/users?page=2").subscribe(
+    this.getstudent();
+  }
+
+  getstudent(){
+    this.data.get("https://reqres.in/api/users").subscribe(
       (response:any) => {
         this.students = response.data;
         this.totalstudent = this.students.length;
       }
     )
   }
+
 
 }
 

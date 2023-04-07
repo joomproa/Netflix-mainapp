@@ -9,6 +9,7 @@ import { HeaderComponent } from './extra/header/header.component';
 import { FooterComponent } from './extra/footer/footer.component';
 import { ButtonComponent } from './extra/button/button.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],
