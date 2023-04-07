@@ -11,6 +11,11 @@
     color: white;
 }
 
+.custom {
+    background: red;
+    min-height: 350px;
+}
+
 .btn-danger {
     height: 30px;
     width: 130px;
