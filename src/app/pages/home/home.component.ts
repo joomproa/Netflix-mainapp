@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
   getstudent(){
     this.ismail.get("https://reqres.in/api/users").subscribe(
       (response:any) => {
+        
         Swal.fire({
           icon: 'success',
           title: 'Proccess Complete',
@@ -46,6 +47,7 @@ export class HomeComponent implements OnInit {
           showConfirmButton: false,
           timer: 1500
         })
+
         this.students = response.data;
         this.totalstudent = this.students.length;
       },
