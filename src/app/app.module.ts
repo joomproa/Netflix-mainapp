@@ -11,7 +11,6 @@ import { ButtonComponent } from './extra/button/button.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
-import { NpCheckboxModule } from 'np-ui-lib';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 @NgModule({
@@ -29,8 +28,7 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgSelectModule,
-    NpCheckboxModule
+    NgSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
