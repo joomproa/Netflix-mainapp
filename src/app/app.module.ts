@@ -10,6 +10,9 @@ import { FooterComponent } from './extra/footer/footer.component';
 import { ButtonComponent } from './extra/button/button.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { NpCheckboxModule } from 'np-ui-lib';
+import { NotfoundComponent } from './pages/notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,16 @@ import { FormsModule } from '@angular/forms';
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    ButtonComponent
+    ButtonComponent,
+    NotfoundComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgSelectModule,
+    NpCheckboxModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,23 +1,95 @@
 <p>about works!</p>
 
 <div>
-    <form>
-        <div>
-            <label>First Name</label><br>
-            <input name="first_name" [(ngModel)]="forminfo.first_name" type="text" placeholder="Please enter your first name">
-        </div>
+    <h3>Form Information</h3>
+    <p>First Name = {{forminfo.first_name || "No name"}}</p>
+    <p>Last Name = {{forminfo.last_name}}</p>
+    <p>Address = {{forminfo.address}}</p>
+    <p>Gender Html = {{forminfo.gender}}</p>
+    <p>Country = {{forminfo.country}}</p>
+    <p>Range = {{forminfo.range}}</p>
+    <p>Color = {{forminfo.color}}</p>
+    <p>Color = {{forminfo.date | date: "MMMM / d / yyyy hh:mm" }}</p>
+</div>
 
+<div>
+    <form #form="ngForm" name="form">
         <div>
-            <label>Last Name</label><br>
-            <input name="last_name" [(ngModel)]="forminfo.last_name" type="text" placeholder="Please enter your last name">
+            <label>Select Date and Time</label><br>
+            <input type="datetime-local" name="date" [(ngModel)]="forminfo.date">
         </div>
-
+        <div>
+            <label>Select Color</label><br>
+            <input type="color" name="color" [(ngModel)]="forminfo.color">
+        </div>
         <!-- <div>
-            <label>Address</label><br>
-            <textarea name="address" [(ngModel)]="forminfo.address" rows="2" placeholder="Input your address"></textarea>
+            <np-checkbox-group orientation="vertical" name="check1" [(ngModel)]="forminfo.check1">
+                <np-checkbox *ngFor="let item of country" label="{{item.name}}" (change)="onChange(item.name)">
+                </np-checkbox>
+              </np-checkbox-group>
         </div> -->
 
-        <button (click)="submitstudent()" class="btn-success" type="submit">Submit</button>
+        <div>
+            <label>Upload File</label>
+            <input type="file" name="image" [(ngModel)]="forminfo.image">
+        </div>
+
+        <div>
+            <label>First Name</label><i class="danger">*</i><br>
+            <input name="first_name" #first_name="ngModel" [(ngModel)]="forminfo.first_name" type="text" placeholder="Please enter your first name" required>
+            <div *ngIf="first_name.invalid && first_name.touched" class="danger">
+                First Name is Required.
+            </div>
+        </div>
+
+        <div *ngIf="forminfo.first_name">
+            <label>Last Name</label><br>
+            <input name="last_name" [(ngModel)]="forminfo.last_name" type="text" placeholder="Please enter your last name" required>
+            <div *ngIf="!forminfo.last_name" class="danger">
+                Last Name is Required.
+            </div>
+        </div>
+
+        <div>
+            <label>Address</label><br>
+            <textarea name="address" [(ngModel)]="forminfo.address" rows="2" placeholder="Input your address"></textarea>
+        </div>
+
+        <div>
+            <label>Gender</label><br>
+            <select name="gender" [(ngModel)]="forminfo.gender">
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+                <option value="Mther">Other</option>
+            </select>
+        </div>
+
+        <div>
+            <label>Country</label>
+            <ng-select name="country" [(ngModel)]="forminfo.country" (change)="getexactstate($event)">
+                <ng-option *ngFor="let item of country" [value]="item.cca2">{{item.name.official}}</ng-option>
+             </ng-select>
+        </div>
+
+
+        <div *ngIf="forminfo.country">
+            <label>State</label>
+            <ng-select name="state" [(ngModel)]="forminfo.state">
+                <ng-option *ngFor="let item of states" [value]="item.name">{{item.name}}</ng-option>
+             </ng-select>
+        </div>
+            
+        <div *ngIf="forminfo.gender == 'Female'">
+            <label>Time of the month</label><br>
+            <input name="todm" [(ngModel)]="forminfo.todm" type="text" placeholder="Please enter your time of the month">
+        </div>
+
+        <div>
+            <label>Rangler Slider</label><br>
+            <input type="range" max="10" name="rnage" [(ngModel)]="forminfo.range">
+        </div>
+
+        <button (click)="submitstudent()" class="btn-success" type="submit" [disabled]="form.invalid">Submit</button>
 
 
     </form>

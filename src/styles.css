@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@ng-select/ng-select/themes/default.theme.css";
+@import "~@angular/cdk/overlay-prebuilt.css";
 
 .light {
     color: green;
+}
+
+.danger {
+    color: red;
 }
 
 .btn-success {
