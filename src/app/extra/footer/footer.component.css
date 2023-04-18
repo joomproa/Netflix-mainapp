@@ -1,4 +1,7 @@
 .custom {
     background: red;
     min-height: 350px;
+    background-image: url("../../../assets/bag.jpeg");
+    background-size: cover;
+    background-position: center;
 }
