@@ -12,6 +12,8 @@ import Swal from 'sweetalert2';
 
 export class AboutComponent implements OnInit {
 
+  countries:any = [];
+
   forminfo:any = {
     last_name: "Akibu"
   }
@@ -32,6 +34,18 @@ export class AboutComponent implements OnInit {
 
   ngOnInit(): void {
     this.getcountry();
+    this.gecountry();
+  }
+
+  gecountry(){
+    this.http.get("https://raw.githubusercontent.com/dr5hn/countries-states-cities-database/master/states.json").subscribe(
+      (res:any) => {
+        this.countries = res
+      },
+      (err) => {
+
+      }
+    )
   }
 
   getcountry(){

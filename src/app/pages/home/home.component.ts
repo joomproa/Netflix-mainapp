@@ -16,7 +16,6 @@ export class HomeComponent implements OnInit {
   headert = "List of student";
   
   students:any = [];
-  teacher:any = [];
   errormsg:any;
 
   randominfo:any;
@@ -34,6 +33,9 @@ export class HomeComponent implements OnInit {
     })
 
     this.getstudent();
+
+
+    
   }
 
   getstudent(){
@@ -61,6 +63,10 @@ export class HomeComponent implements OnInit {
     )
   }
 
+
+  tconsole(){
+    console.log("This button was clicked")
+  }
  
 
 

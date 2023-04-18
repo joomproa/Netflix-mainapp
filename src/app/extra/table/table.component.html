@@ -1,0 +1,27 @@
+<table class="tstyle" [border]="1">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>{{head1}}</th>
+            <th>{{head2}}</th>
+            <th *ngIf="head3">{{head3}}</th>
+            <th *ngIf="head4">{{head4}}</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of students">
+            <td>{{item.id}}</td>
+
+            <!-- this is for country -->
+            <td *ngIf="item.name">{{item.name}}</td>
+            <td *ngIf="item.country_code">{{item.country_code}}</td>
+
+            <!-- this is for student -->
+            <td *ngIf="item.first_name">{{item.first_name}}</td>
+            <td *ngIf="item.last_name">{{item.last_name}}</td>
+
+            <td *ngIf="item.email">{{item.email}}</td>
+            <td *ngIf="item.avatar"><img class="timage" src="{{item.avatar}}"></td>
+        </tr>
+    </tbody>
+</table>

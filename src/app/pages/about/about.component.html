@@ -1,5 +1,9 @@
 <p>about works!</p>
 
+<app-buttontwo route="/home" titlename="Click Me"></app-buttontwo>
+
+<app-table [students]="countries.slice(0, 5)" head1="Country Name" head2="Country Code"></app-table>
+
 <div>
     <h3>Form Information</h3>
     <p>First Name = {{forminfo.first_name || "No name"}}</p>
@@ -10,10 +14,16 @@
     <p>Range = {{forminfo.range}}</p>
     <p>Color = {{forminfo.color}}</p>
     <p>Color = {{forminfo.date | date: "MMMM / d / yyyy hh:mm" }}</p>
+    <p>Radio Option = {{forminfo.paystack || forminfo.paypal}}</p>
 </div>
 
 <div>
     <form #form="ngForm" name="form">
+        <div>
+            <label>Radio</label>
+            <input type="radio" name="paystack" [(ngModel)]="forminfo.paystack" value="paystack">
+            <input type="radio" name="paypal" [(ngModel)]="forminfo.paystack" value="paypal">
+        </div>
         <div>
             <label>Select Date and Time</label><br>
             <input type="datetime-local" name="date" [(ngModel)]="forminfo.date">

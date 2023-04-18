@@ -1,35 +1,10 @@
 <p>Welcome to Homepage</p>
 
+<app-button></app-button>
 
+<app-buttontwo titlename="Click Me2" (click)="tconsole()"></app-buttontwo>
 
-<table class="tstyle" [border]="1">
-    <thead>
-        <tr>
-            <th>ID</th>
-            <th>First Name</th>
-            <th>Last Name</th>
-            <th>Email Address</th>
-            <th>Profile Image</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let item of students">
-            <td>{{item.id}}</td>
-            <td>{{item.first_name}}</td>
-            <td>{{item.last_name}}</td>
-            <td>{{item.email}}</td>
-            <td><img class="timage" src="{{item.avatar}}"></td>
-        </tr>
-    </tbody>
-</table>
-
-
-
-
-
-
-
-
+<app-table [students]="students" head1="First Name" head2="Last Name" head3="Email" head4="User Image"></app-table>
 
 <div *ngIf="students.length < 7">
     <h3>List of Students</h3>

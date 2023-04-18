@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { NotfoundComponent } from './pages/notfound/notfound.component';
+import { ButtontwoComponent } from './extra/buttontwo/buttontwo.component';
+import { TableComponent } from './extra/table/table.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { NotfoundComponent } from './pages/notfound/notfound.component';
     HeaderComponent,
     FooterComponent,
     ButtonComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    ButtontwoComponent,
+    TableComponent
   ],
   imports: [
     BrowserModule,
